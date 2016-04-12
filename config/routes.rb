@@ -54,6 +54,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get 'hello_world' => 'demo#hello_world'
+  get 'accounts/:app_key' => 'accounts#show_account'
+  get 'accounts/:app_key/features' => 'accounts#show_features_of_account'
+  post 'accounts/:app_key/features/:id' => 'accounts#enable_feature'
+  delete 'accounts/:app_key/features/:id' => 'accounts#disable_feature'
+  get 'features' => 'features#get_all_features'
 
 end
